@@ -1,11 +1,11 @@
-export interface SchemaOffreMaison {
-    id?: string; 
-    name: string;
-    price: number;
-    favorie: boolean;
-    picture: string;
-    bedroom: number;
-    bathroom: number;
-    address: string;
-    surface: string;
-}
+export interface Basket {
+	semelle?: string;
+	empeigne?: string;
+	pointe?: string;
+	oeillet?: string;
+	bande?: string;
+	languette?: string;
+	lacet?: string;
+	trimestre?: string;
+  }
+  

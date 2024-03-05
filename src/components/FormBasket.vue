@@ -1,9 +1,14 @@
 <script setup lang="ts">
-	import type { ChaussureSvg } from '@/types-svg';
+	import type { Basket } from '@/types';
 	import { ref } from 'vue';
-	import SvgProfil from './svgProfil.vue';
+	import BasketProfil from './BasketProfil.vue';
 
-	const chaussure = ref<ChaussureSvg>({});
+	const props = defineProps<{
+		data?: Basket;
+		id?: string;
+	}>();
+
+	const chaussure = ref<Basket>(props.data ?? {});
 </script>
 
 <template>
@@ -12,7 +17,7 @@
 			<li><a href="#profil">Profil</a></li>
 		</ul>
 		<div>
-			<SvgProfil class="carousel-item w-64" v-bind="chaussure" id="profil" />
+			<BasketProfil class="carousel-item w-64" v-bind="chaussure" id="profil" />
 		</div>
 		<FormKit type="form" v-model="chaussure">
 			<FormKit name="semelle" label="semelle" value="#FFFFFF" type="color" />
@@ -25,4 +30,4 @@
 			<FormKit name="trimestre" label="trimestre" value="#FFFFFF" type="color" />
 		</FormKit>
 	</div>
-</template>
+</template>@/types./BasketProfil.vue

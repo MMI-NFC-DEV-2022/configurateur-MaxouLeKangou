@@ -1,12 +1,12 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-	import FormSvg from '@/components/FormSvg.vue';
+	import FormBasket from '@/components/FormBasket.vue';
 	import FormImages from '@/components/FormImages.vue';
 </script>
 
 <template>
 	<div>
-		<FormSvg />
-		<FormImages />
+		<FormBasket />
+		<!-- <FormImages /> -->
 	</div>
 </template>
