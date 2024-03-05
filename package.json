@@ -15,7 +15,9 @@
   "dependencies": {
     "@formkit/vue": "^1.5.5",
     "@headlessui/tailwindcss": "^0.2.0",
+    "@headlessui/vue": "^1.7.19",
     "@supabase/supabase-js": "^2.39.3",
+    "formkit": "^1.5.9",
     "node": "^21.6.1",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
