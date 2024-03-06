@@ -44,7 +44,7 @@ const exemples: Basket[] = [
                     name: '/basket/exemple/[data]',
                     params: { data: JSON.stringify(exemples) },
                 }">
-                    <BasketProfil class="w-64" v-for="exemple in exemples" v-bind="exemple" />
+                    <BasketProfil class="w-64" v-for="exemple in exemples" :key="exemple.bande" v-bind="exemple" />
                 </RouterLink>
             </div>
         </div>
