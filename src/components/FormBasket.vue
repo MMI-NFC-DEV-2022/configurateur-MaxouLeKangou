@@ -2,7 +2,7 @@
 <script setup lang="ts">
 import {ref} from "vue"
 import type { Basket } from '@/types';
-import { colors } from '@/types';
+import { colors, materiaux } from '@/types';
 import SvgProfil from '@/components/SvgProfil.vue';
 import SvgDessus from '@/components/SvgDessus.vue';
 const props = defineProps<{
@@ -31,6 +31,14 @@ const chaussure = ref<Basket>(props.data ?? {});
 
 
         <FormKit type="form" v-model="chaussure" >
+            <FormKit name="materiaux" label="Matériaux" value="#FFFFFF" type="radio" :options="materiaux" :sections-schema="{ inner: { $el: null }, decorator: { $el: null },}" input-class="peer sr-only" options-class="flex gap-6">
+                <template #label="context">
+                    <div class="h-12 w-12 rounded-full border-2 peer-checked:border-red-600"
+                        :style="{ backgroundImage: `url(${context.option.value})` }"></div>
+                    <span class="sr-only">{{ context.option.label }}</span>
+                </template>
+            </FormKit>
+
             <FormKit name="semelle" label="semelle" value="#FFFFFF" type="radio" :options="colors" :sections-schema="{ inner: { $el: null }, decorator: { $el: null },}" input-class="peer sr-only" options-class="flex gap-1">
                 <template #label="context">
                     <div class="h-6 w-6 rounded-full border-2 peer-checked:border-red-600" :style="{ backgroundColor: context.option.value }"></div>

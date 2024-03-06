@@ -23,3 +23,18 @@ export const colors = {
   "#800000": "Marron",
   "#808000": "Olive",
 };
+
+export const materiaux = [
+  {
+    value: "/images/materiaux/cuir.jpg",
+    label: "Cuir",
+  },
+  {
+    value: "/images/materiaux/tissu.jpg",
+    label: "Tissu",
+  },
+  {
+    value: "/images/materiaux/synthetique.jpg",
+    label: "Synthétique",
+  },
+];
