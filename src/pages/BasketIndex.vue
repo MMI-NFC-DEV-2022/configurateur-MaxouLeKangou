@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Basket } from "../types";
-import SvgProfil from "@/components/SvgProfil.vue";
+import BasketProfil from "@/components/SvgProfil.vue";
 const exemples: Basket[] = [
     {
         semelle: "#FF0000",
@@ -44,7 +44,7 @@ const exemples: Basket[] = [
                     name: '/basket/exemple/[data]',
                     params: { data: JSON.stringify(exemples) },
                 }">
-                    <SvgProfil class="w-64" v-for="exemple in exemples" v-bind="exemple" />
+                    <BasketProfil class="w-64" v-for="exemple in exemples" v-bind="exemple" />
                 </RouterLink>
             </div>
         </div>
