@@ -1,16 +1,12 @@
 import { createClient } from '@supabase/supabase-js'
-import { ref } from 'vue'
-
+import {ref} from '@vue/reactivity'
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_KEY
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY
+console.log("affiche .env : ",supabaseUrl, supabaseAnonKey);
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
-export async function signInWithGithub() {
-    const { data, error } = await supabase.auth.signInWithOAuth({
-        provider: 'github',
-    })
-}
+globalThis.supabase = supabase
 
 const { data } = await supabase.auth.getUser()
 export const user = ref(data.user)

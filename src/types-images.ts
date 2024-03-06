@@ -4,7 +4,10 @@ export const couleursNoms: { [key in couleur]: string } = {
   bleu: "Bleu",
   vert: "Vert",
   violet: "Violet",
+  
 };
+
+
 export interface Chaussure {
   bandes?: couleur;
   cuir?: couleur;

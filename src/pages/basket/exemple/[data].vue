@@ -1,10 +1,8 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import FormBasket from "../../../components/FormBasket.vue";
-defineProps<{
-  data: string;
-}>();
+import FormSvg from "../../../components/FormBasket.vue";
+import { useRoute } from "vue-router/auto"
+const route = useRoute("/basket/exemple/[data]")
 </script>
 <template>
-  <FormBasket :data="JSON.parse(data)" />
+    <FormSvg :data="JSON.parse(route.params.data)" />
 </template>

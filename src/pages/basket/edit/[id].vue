@@ -1,10 +1,9 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <script setup lang="ts">
-import FormBasket from "../../../components/FormBasket.vue";
+import FormSvg from "../../../components/FormBasket.vue";
 defineProps<{
-  id: string;
+    id: string;
 }>();
 </script>
 <template>
-  <FormBasket :id="id" />
+    <FormSvg :id="id" />
 </template>

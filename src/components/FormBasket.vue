@@ -1,33 +1,47 @@
 <script setup lang="ts">
-	import type { Basket } from '@/types';
-	import { ref } from 'vue';
-	import BasketProfil from './BasketProfil.vue';
+import {ref} from "vue"
+import type { Basket } from '@/types';
+import { colors } from '@/types';
+import SvgProfil from '@/components/SvgProfil.vue';
+import SvgDessus from '@/components/SvgDessus.vue';
+const props = defineProps<{
+    data?: Basket;
+    id?: string;
+}>();
 
-	const props = defineProps<{
-		data?: Basket;
-		id?: string;
-	}>();
-
-	const chaussure = ref<Basket>(props.data ?? {});
+const chaussure = ref<Basket>(props.data ?? {});
 </script>
 
 <template>
-	<div class="p-2">
-		<ul class="flex gap-1">
-			<li><a href="#profil">Profil</a></li>
-		</ul>
-		<div>
-			<BasketProfil class="carousel-item w-64" v-bind="chaussure" id="profil" />
-		</div>
-		<FormKit type="form" v-model="chaussure">
-			<FormKit name="semelle" label="semelle" value="#FFFFFF" type="color" />
-			<FormKit name="empeigne" label="empeigne" value="#FFFFFF" type="color" />
-			<FormKit name="pointe" label="pointe" value="#FFFFFF" type="color" />
-			<FormKit name="oeillet" label="oeillet" value="#FFFFFF" type="color" />
-			<FormKit name="bande" label="bande" value="#FFFFFF" type="color" />
-			<FormKit name="languette" label="languette" value="#FFFFFF" type="color" />
-			<FormKit name="lacet" label="lacet" value="#FFFFFF" type="color" />
-			<FormKit name="trimestre" label="trimestre" value="#FFFFFF" type="color" />
-		</FormKit>
-	</div>
-</template>@/types./BasketProfil.vue
+<div class="p-2">
+
+    <ul class="flex gap-1">
+        <li>
+        <a href="#profil">Profil</a>
+    </li>
+        <li>
+        <a href="#dessus">Dessus</a>
+    </li>
+</ul>
+<div class="carousel w-64">
+<SvgProfil class="carousel-item w-64" v-bind="chaussure" id="profil"></SvgProfil>
+<SvgDessus class="carousel-item w-64" v-bind="chaussure" id="dessus"></SvgDessus>
+
+</div>
+
+
+<FormKit type="form" v-model="chaussure" >
+<FormKit name="semelle" label="semelle" value="#ffffff" type="select" :options="colors"></FormKit>
+<FormKit name="empeigne" label="empeigne" value="#ffffff" type="select" :options="colors"></FormKit>
+<FormKit name="pointe" label="pointe" value="#ffffff" type="select" :options="colors"></FormKit>
+<FormKit name="oeillet" label="oeillet" value="#ffffff" type="select" :options="colors"></FormKit>
+<FormKit name="bande" label="bande" value="#ffffff" type="select" :options="colors"></FormKit>
+<FormKit name="languette" label="languette" value="#ffffff" type="select" :options="colors"></FormKit>
+<FormKit name="lacet" label="lacet" value="#ffffff" type="select" :options="colors"></FormKit>
+<FormKit name="trimestre" label="trimestre" value="#ffffff" type="select" :options="colors"></FormKit>
+
+
+
+</FormKit>
+</div>
+</template>
